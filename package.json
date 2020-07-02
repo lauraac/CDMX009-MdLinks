@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lauraac/CDMX009-MdLinks/issues"
   },
-  "homepage": "https://github.com/lauraac/CDMX009-MdLinks#readme"
+  "homepage": "https://github.com/lauraac/CDMX009-MdLinks#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
 }

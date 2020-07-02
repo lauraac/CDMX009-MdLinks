@@ -2,6 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
+const {validate}=require('./utils/validate')
 // const markdownLinkExtractor = require('markdown-link-extractor');
 
 let document = process.argv[2];
@@ -38,20 +39,9 @@ const readmeLincks =(filevalidate)=>{
 let string =filevalidate;
          let regExp= (/https?:\S+\w/gi);
          let links = string.match(regExp);
-
-         console.log(links);
+         validate(links)
 }
 
-
-
-const validateLinks = (links) => {
-    console.log('VALIDATE'.rainbow.bold)
-    links.forEach(link => {
-        fetch(link).then((res) => {
-            console.log('STATUS: '.brightBlue + `${res.status} ${res.statusText}`.brightGreen + ' - URL: '.brightBlue + res.url.brightWhite);
-        }).catch((err) => console.log('STATUS: '.brightBlue + '404 Fail'.red + ' - URL: '.brightBlue + link.brightWhite))      
-    });
-}
 
 
 
